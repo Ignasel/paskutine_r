@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Products from '../products/Products'
+import Product from '../product/Product'
 import Orders from "../orders/Orders";
 //react.component jei virsuje neimpoirtuoju
 
@@ -9,7 +10,7 @@ class Main extends Component{
         this.state = {allProducts: []};
     }
     componentDidMount(){
-        fetch(`http://shopend.test/api/all-products`)
+        fetch(`http://skelbimai.test/api/all-products`)
             .then(response => response.json())
             .then(
                 data=>{
@@ -19,7 +20,6 @@ class Main extends Component{
                 })
     }
     render(){
-
         return(
             <main>
                 <div className="row card-row">
@@ -32,8 +32,6 @@ class Main extends Component{
                 </div>
             </main>
         );
-
     }
-
 }
 export default Main;
